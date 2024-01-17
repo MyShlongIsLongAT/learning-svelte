@@ -6,7 +6,10 @@ export const load = async ({ parent, params }) => {
     (team) => team.id === parseInt(currentTeamId),
   )[0];
 
+  const positions = [... new Set(currentTeam.squad.map(player => player.position))]; 
+
   return {
     currentTeam: currentTeam,
+    positions: positions,
   };
 };

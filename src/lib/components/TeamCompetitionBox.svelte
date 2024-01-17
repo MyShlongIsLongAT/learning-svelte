@@ -1,10 +1,10 @@
 <script>
-  export let teamCompetitions;
+  export let runningCompetitions;
 </script>
 
-<div class="competitionInfoBox">
+<div class="competitionInfoContainer">
   <div class="competitionFlex">
-    {#each teamCompetitions as competition}
+    {#each runningCompetitions as competition}
       <div>
         <img src={competition.emblem} alt={competition.name} />
       </div>
@@ -17,7 +17,7 @@
     width: 100px;
   }
 
-  .competitionInfoBox {
+  .competitionInfoContainer {
     margin-top: 5vh;
     display: flex;
     justify-content: center;

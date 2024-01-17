@@ -1,10 +1,13 @@
 <script>
   import TeamInfoBox from "$lib/components/TeamInfoBox.svelte";
-  import TeamCompetitionBox from "../../../lib/components/TeamCompetitionBox.svelte";
+  import TeamCompetitionBox from "$lib/components/TeamCompetitionBox.svelte";
+  import TeamSquadBox from "$lib/components/TeamSquadBox.svelte";
   export let data;
 
-  const currentTeam = data.currentTeam;
+  const { currentTeam, positions } = data;
+  const { squad, coach, runningCompetitions} = currentTeam;
 </script>
 
 <TeamInfoBox {currentTeam} />
-<TeamCompetitionBox teamCompetitions={currentTeam.runningCompetitions} />
+<TeamCompetitionBox {runningCompetitions} />
+<TeamSquadBox {squad} {coach} {positions}/>
